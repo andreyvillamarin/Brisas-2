@@ -7,7 +7,7 @@ require_once APP_ROOT . '/app/models/Order.php';
 
 if (!isset($_GET['id'])) {
     http_response_code(400);
-    echo json_encode(['error' => 'No se proporcion�� ID de pedido']);
+    echo json_encode(['error' => 'No se proporciono ID de pedido']);
     exit;
 }
 

@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
     // Iteramos directamente sobre los datos enviados por el formulario
     foreach ($dispatchedItems as $itemId => $isDispatched) {
-        // El valor ser®¢ '1' si el checkbox fue marcado, o '0' del campo oculto.
+        // El valor serËäç '1' si el checkbox fue marcado, o '0' del campo oculto.
         // Aseguramos que sea un entero para la BD.
         $orderModel->updateOrderItemDispatchStatus($itemId, (int)$isDispatched);
     }
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     ];
     $orderModel->updateOrderDetails($orderId, $data);
 
-    // Redirigir para evitar reenv®™o del formulario y asegurar que la tabla se vea actualizada
+    // Redirigir para evitar reenvËµ§o del formulario y asegurar que la tabla se vea actualizada
     header('Location: dashboard_despacho.php');
     exit;
 }
@@ -62,12 +62,12 @@ include APP_ROOT . '/app/views/admin/layout/header_despacho.php'; // Using a cus
                             <th>Cliente</th>
                             <th>Fecha</th>
                             <th>Ciudad</th>
-                            <th>C®Ædigo</th>
+                            <th>C√≥digo</th>
                             <th class="text-end">Acciones</th>
                         </tr>
                     </thead>
                     <tbody id="orders-table-body">
-                        <!-- El contenido se cargar®¢ aqu®™ v®™a AJAX -->
+                        <!-- El contenido se cargarËäç aquËµ§ vËµ§a AJAX -->
                     </tbody>
                 </table>
             </div>
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
             addEventListenersToButtons();
         } catch (error) {
             console.error('Error al cargar la tabla de pedidos:', error);
-            tableBody.innerHTML = '<tr><td colspan="5" class="text-center text-danger">Error al cargar los pedidos. Intente de nuevo m®¢s tarde.</td></tr>';
+            tableBody.innerHTML = '<tr><td colspan="5" class="text-center text-danger">Error al cargar los pedidos. Intente de nuevo mËäçs tarde.</td></tr>';
         }
     }
 
@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     return;
                 }
 
-                // ... (toda la l®Ægica para construir el HTML del modal sigue aqu®™)
+                // ... (toda la lËªägica para construir el HTML del modal sigue aquËµ§)
                 const orderDate = new Date(data.details.created_at).toLocaleString('es-CO', {
                     year: 'numeric', month: 'long', day: 'numeric',
                     hour: '2-digit', minute: '2-digit', hour12: true
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <div class="col-md-4 text-md-end">
                                 <p><strong>Estado:</strong> <span class="badge bg-info">${data.details.status_translated}</span></p>
                                 <p><strong>Fecha:</strong> ${orderDate}</p>
-                                <p><strong>C®Ædigo:</strong> ${data.details.code || 'N/A'}</p>
+                                <p><strong>C√≥digo:</strong> ${data.details.code || 'N/A'}</p>
                             </div>
                         </div>
                         <hr>
@@ -200,10 +200,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Cargar la tabla al iniciar la p®¢gina
+    // Cargar la tabla al iniciar la pËäçgina
     loadTableContent();
 
-    // Exponer la funci®Æn de carga para que pueda ser llamada desde el footer
+    // Exponer la funciËªän de carga para que pueda ser llamada desde el footer
     window.refreshDespachoTable = loadTableContent;
 });
 </script>

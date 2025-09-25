@@ -48,6 +48,10 @@ class Order {
                 $whereClauses[] = "DATE(created_at) = :order_date";
                 $params[':order_date'] = $filters['date'];
             }
+            if (!empty($filters['searchTerm'])) {
+                $whereClauses[] = "(LOWER(customer_name) LIKE :searchTerm OR LOWER(customer_city) LIKE :searchTerm OR LOWER(code) LIKE :searchTerm)";
+                $params[':searchTerm'] = '%' . strtolower($filters['searchTerm']) . '%';
+            }
 
             if (!empty($whereClauses)) {
                 $sql .= " WHERE " . implode(' AND ', $whereClauses);
