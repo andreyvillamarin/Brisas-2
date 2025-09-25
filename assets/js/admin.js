@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
                             <tr>
                                 <th>Producto</th>
                                 <th>Cantidad</th>
+                                <th>Código Barras</th>
+                                <th>Código Interno</th>
                                 ${data.details.status === 'completed' ? '<th>Despachado</th>' : ''}
                             </tr>
                         </thead>
@@ -74,7 +76,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     nameCell += `<br><small class="text-danger">${item.promotion_text}</small>`;
                 }
 
-                let rowHtml = `<td>${nameCell}</td><td>${item.quantity}</td>`;
+                let rowHtml = `
+                    <td>${nameCell}</td>
+                    <td>${item.quantity}</td>
+                    <td>${item.codigo_barras || ''}</td>
+                    <td>${item.codigo_interno || ''}</td>
+                `;
                 let rowClass = '';
 
                 // Hacemos la comprobación del estado más robusta (insensible a mayúsculas/minúsculas y espacios)

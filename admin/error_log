@@ -35,3 +35,5 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in /home/qdosnetw/public_html/demos/brisas/admin/dashboard_despacho.php on line 24
+[25-Sep-2025 14:23:04 America/Bogota] Error updating product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'codigo_barras' in 'SET'
+[25-Sep-2025 14:25:19 America/Bogota] Error updating product: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'codigo_barras' in 'SET'

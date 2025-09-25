@@ -165,6 +165,8 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <tr>
                                     <th>Producto</th>
                                     <th>Cantidad</th>
+                                    <th>Código Barras</th>
+                                    <th>Código Interno</th>
                                     <th>Despachado</th>
                                 </tr>
                             </thead>
@@ -177,6 +179,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         <tr>
                             <td>${item.name}</td>
                             <td>${item.quantity}</td>
+                            <td>${item.codigo_barras || ''}</td>
+                            <td>${item.codigo_interno || ''}</td>
                             <td>
                                 <div class="form-check">
                                     <input type="hidden" name="dispatched[${item.item_id}]" value="0">

@@ -32,10 +32,16 @@ class Product {
         }
     }
 
-    public function create($name, $categoryId, $imageUrl) {
+    public function create($name, $categoryId, $imageUrl, $codigoBarras = null, $codigoInterno = null) {
         try {
-            $stmt = $this->db->prepare("INSERT INTO products (name, category_id, image_url) VALUES (:name, :category_id, :image_url)");
-            $stmt->execute(['name' => $name, 'category_id' => $categoryId, 'image_url' => $imageUrl]);
+            $stmt = $this->db->prepare("INSERT INTO products (name, category_id, image_url, codigo_barras, codigo_interno) VALUES (:name, :category_id, :image_url, :codigo_barras, :codigo_interno)");
+            $stmt->execute([
+                'name' => $name, 
+                'category_id' => $categoryId, 
+                'image_url' => $imageUrl,
+                'codigo_barras' => $codigoBarras,
+                'codigo_interno' => $codigoInterno
+            ]);
             return $this->db->lastInsertId();
         } catch (PDOException $e) {
             error_log("Error creating product: " . $e->getMessage());
@@ -43,10 +49,16 @@ class Product {
         }
     }
 
-    public function update($id, $name, $categoryId, $imageUrl = null) {
+    public function update($id, $name, $categoryId, $imageUrl = null, $codigoBarras = null, $codigoInterno = null) {
         try {
-            $sql = "UPDATE products SET name = :name, category_id = :category_id";
-            $params = ['id' => $id, 'name' => $name, 'category_id' => $categoryId];
+            $sql = "UPDATE products SET name = :name, category_id = :category_id, codigo_barras = :codigo_barras, codigo_interno = :codigo_interno";
+            $params = [
+                'id' => $id, 
+                'name' => $name, 
+                'category_id' => $categoryId,
+                'codigo_barras' => $codigoBarras,
+                'codigo_interno' => $codigoInterno
+            ];
 
             if ($imageUrl) {
                 $sql .= ", image_url = :image_url";

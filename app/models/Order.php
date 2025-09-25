@@ -94,7 +94,7 @@ class Order {
             $order['details'] = $stmt->fetch(PDO::FETCH_ASSOC);
 
             // Obtener productos del pedido
-            $sqlItems = "SELECT oi.id as item_id, oi.quantity, oi.promotion_text, oi.dispatched, p.name, p.image_url 
+            $sqlItems = "SELECT oi.id as item_id, oi.quantity, oi.promotion_text, oi.dispatched, p.name, p.image_url, p.codigo_barras, p.codigo_interno 
                          FROM order_items oi 
                          JOIN products p ON oi.product_id = p.id 
                          WHERE oi.order_id = :order_id";

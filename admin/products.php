@@ -25,6 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'] ?? null;
     $name = $_POST['name'] ?? '';
     $categoryId = $_POST['category_id'] ?? null;
+    $codigoBarras = $_POST['codigo_barras'] ?? null;
+    $codigoInterno = $_POST['codigo_interno'] ?? null;
     $imageUrl = null;
 
     // Manejo de la subida de imagen
@@ -43,12 +45,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     switch ($_POST['form_action']) {
         case 'create':
-            $newId = $productModel->create($name, $categoryId, $imageUrl);
+            $newId = $productModel->create($name, $categoryId, $imageUrl, $codigoBarras, $codigoInterno);
             log_event("Creó el producto", "product", $newId);
             break;
         case 'update':
             $currentImage = $_POST['current_image'] ?? null;
-            $productModel->update($id, $name, $categoryId, $imageUrl ?? $currentImage);
+            $productModel->update($id, $name, $categoryId, $imageUrl ?? $currentImage, $codigoBarras, $codigoInterno);
             log_event("Actualizó el producto", "product", $id);
             break;
     }
@@ -89,17 +91,19 @@ include APP_ROOT . '/app/views/admin/layout/header.php';
         <div class="card">
             <div class="card-body">
                 <table class="table table-striped">
-                    <thead><tr><th>Imagen</th><th>Nombre</th><th>Categoría</th><th>Acciones</th></tr></thead>
+                    <thead><tr><th>Imagen</th><th>Nombre</th><th>Categoría</th><th>Código Barras</th><th>Código Interno</th><th>Acciones</th></tr></thead>
                     <tbody id="products-table-body">
                         <?php $products = $productModel->getAll(); ?>
                         <?php if (empty($products)): ?>
-                            <tr><td colspan="4" class="text-center">No hay productos creados.</td></tr>
+                            <tr><td colspan="6" class="text-center">No hay productos creados.</td></tr>
                         <?php else: ?>
                             <?php foreach ($products as $product): ?>
                                 <tr>
                                     <td><img src="../<?= htmlspecialchars($product['image_url'] ?? 'assets/img/placeholder.png') ?>" alt="" class="category-thumbnail"></td>
                                     <td><?= htmlspecialchars($product['name']) ?></td>
                                     <td><?= htmlspecialchars($product['category_name'] ?? 'N/A') ?></td>
+                                    <td><?= htmlspecialchars($product['codigo_barras'] ?? '') ?></td>
+                                    <td><?= htmlspecialchars($product['codigo_interno'] ?? '') ?></td>
                                     <td>
                                         <a href="products.php?action=edit&id=<?= $product['id'] ?>" class="btn btn-sm btn-secondary">Editar</a>
                                         <a href="products.php?action=delete&id=<?= $product['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('¿Estás seguro?')">Eliminar</a>
@@ -143,6 +147,16 @@ include APP_ROOT . '/app/views/admin/layout/header.php';
                                 </option>
                             <?php endforeach; ?>
                         </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="codigo_barras" class="form-label">Código de Barras</label>
+                        <input type="text" class="form-control" id="codigo_barras" name="codigo_barras" value="<?= htmlspecialchars($product['codigo_barras'] ?? '') ?>">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="codigo_interno" class="form-label">Código Interno</label>
+                        <input type="text" class="form-control" id="codigo_interno" name="codigo_interno" value="<?= htmlspecialchars($product['codigo_interno'] ?? '') ?>">
                     </div>
 
                     <div class="mb-3">
