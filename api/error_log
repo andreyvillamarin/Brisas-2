@@ -2214,3 +2214,5 @@ Stack trace:
 [24-Sep-2025 17:32:44 America/Bogota] Error getting order with items: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'SELECT'
 [24-Sep-2025 17:32:48 America/Bogota] Error getting order with items: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'SELECT'
 [24-Sep-2025 17:33:59 America/Bogota] Error getting order with items: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'updated_at' in 'SELECT'
+[25-Sep-2025 12:15:55 America/Bogota] Error getting order with items: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hora_envio_despacho' in 'SELECT'
+[25-Sep-2025 12:16:12 America/Bogota] Error getting order with items: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'hora_envio_despacho' in 'SELECT'

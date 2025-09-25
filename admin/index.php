@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     if ($action === 'send_to_dispatch') {
         $updateData['status'] = 'enviado a despacho';
         $updateData['code'] = $_POST['code'] ?? null;
+        $updateData['hora_envio_despacho'] = date('Y-m-d H:i:s');
         log_event("envió a despacho el pedido", "order", $orderId);
     } elseif ($action === 'save_details') {
         $updateData['code'] = $_POST['code'] ?? null;
@@ -51,7 +52,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 
     if ($action === 'send_to_dispatch') {
         log_event("Envió a despacho el", "order", $id);
-        $orderModel->updateStatus($id, 'enviado a despacho');
+        $updateData = [
+            'status' => 'enviado a despacho',
+            'hora_envio_despacho' => date('Y-m-d H:i:s')
+        ];
+        $orderModel->updateOrderDetails($id, $updateData);
     } elseif ($action === 'archive') {
         log_event("Archivó el", "order", $id);
         $orderModel->updateStatus($id, 'archived');

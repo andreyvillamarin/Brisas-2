@@ -42,7 +42,7 @@ include APP_ROOT . '/app/views/admin/layout/header_despacho.php';
                     <input type="date" id="date-filter" class="form-control" value="<?= htmlspecialchars($dateFilter) ?>">
                 </div>
                 <div class="col-md-8">
-                    <label for="search-filter" class="form-label">Buscar por Cliente, Ciudad o C¨®digo</label>
+                    <label for="search-filter" class="form-label">Buscar por Cliente, Ciudad o CÃ³digo</label>
                     <input type="text" id="search-filter" class="form-control" placeholder="Escribe para buscar..." value="<?= htmlspecialchars($searchTerm) ?>">
                 </div>
             </form>
@@ -55,7 +55,7 @@ include APP_ROOT . '/app/views/admin/layout/header_despacho.php';
                             <th>Cliente</th>
                             <th>Fecha</th>
                             <th>Ciudad</th>
-                            <th>C¨®digo</th>
+                            <th>CÃ³digo</th>
                             <th>Nota</th>
                             <th class="text-end">Acciones</th>
                         </tr>
@@ -146,6 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function escapeHTML(str) {
+        if (typeof str !== 'string') {
+            return '';
+        }
         return str.replace(/[&<>"']/g, function(match) {
             return {
                 '&': '&amp;',
@@ -173,25 +176,66 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
+            const orderDate = new Date(data.details.created_at).toLocaleString('es-CO', {
+                year: 'numeric', month: 'long', day: 'numeric',
+                hour: '2-digit', minute: '2-digit', hour12: true
+            });
+
+            let customerType = data.details.customer_type;
+            if (!customerType || customerType.trim() === '') {
+                customerType = 'No especificado';
+            } else {
+                const typeTranslations = {
+                    'distribuidor_salsamentaria': 'Cliente Salsamentaria',
+                    'Mercaderista': 'Mercaderista'
+                };
+                customerType = typeTranslations[customerType] || customerType;
+            }
+
             let contentHtml = `
-                <p><strong>Cliente:</strong> ${data.details.customer_name}</p>
-                <p><strong>C¨®digo:</strong> ${data.details.code || 'N/A'}</p>
-                <p><strong>Nota:</strong> ${data.details.note || 'N/A'}</p>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h6>Cliente: ${data.details.customer_name}</h6>
+                        <p><strong>Tipo:</strong> ${customerType}</p>
+                        <p><strong>Ciudad:</strong> ${data.details.customer_city}</p>
+                        <p><strong>ID:</strong> ${data.details.customer_id_number}</p>
+                        ${data.details.customer_email ? `<p><strong>Email:</strong> ${data.details.customer_email}</p>` : ''}
+                        ${data.details.mercaderista_supermarket ? `<p><strong>Supermercado:</strong> ${data.details.mercaderista_supermarket}</p>` : ''}
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <p><strong>Estado:</strong> <span class="badge bg-success">${data.details.status_translated || 'Completado'}</span></p>
+                        <p><strong>Fecha Pedido:</strong> ${orderDate}</p>
+                        <p><strong>CÃ³digo:</strong> ${data.details.code || 'N/A'}</p>
+                        ${data.details.hora_envio_despacho ? `<p><strong>Despachado:</strong> ${new Date(data.details.hora_envio_despacho).toLocaleString('es-CO', { timeZone: 'America/Bogota', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true })}</p>` : ''}
+                        ${data.details.hora_completado ? `<p><strong>Completado:</strong> ${new Date(data.details.hora_completado).toLocaleString('es-CO', { timeZone: 'America/Bogota', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true })}</p>` : ''}
+                        ${data.details.note ? `<p><strong>Nota de Despacho:</strong> ${data.details.note}</p>` : ''}
+                    </div>
+                </div>
                 <hr>
                 <h6>Productos del Pedido:</h6>
                 <table class="table">
-                    <thead><tr><th>Producto</th><th>Cantidad</th><th>Despachado</th></tr></thead>
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Despachado</th>
+                        </tr>
+                    </thead>
                     <tbody>
             `;
 
             data.items.forEach(item => {
                 const isDispatched = parseInt(item.dispatched, 10) === 1;
                 const rowClass = isDispatched ? '' : 'text-decoration-line-through';
-                const dispatchedText = isDispatched ? '<span class="badge bg-success">S¨ª</span>' : '<span class="badge bg-danger">No</span>';
+                const dispatchedText = isDispatched ? '<span class="badge bg-success">SÃ­</span>' : '<span class="badge bg-danger">No</span>';
+                let nameCell = item.name;
+                if (item.promotion_text) {
+                    nameCell += `<br><small class="text-danger">${item.promotion_text}</small>`;
+                }
 
                 contentHtml += `
                     <tr class="${rowClass}">
-                        <td>${item.name}</td>
+                        <td>${nameCell}</td>
                         <td>${item.quantity}</td>
                         <td>${dispatchedText}</td>
                     </tr>

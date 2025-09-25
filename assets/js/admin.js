@@ -45,6 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="col-md-4 text-md-end">
                             <p><strong>Estado:</strong> <span class="badge bg-info">${data.details.status_translated}</span></p>
                             <p><strong>Fecha:</strong> ${orderDate}</p>
+                            ${data.details.hora_envio_despacho ? `<p><strong>Despachado:</strong> ${new Date(data.details.hora_envio_despacho).toLocaleString('es-CO', { timeZone: 'America/Bogota', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true })}</p>` : ''}
+                            ${data.details.hora_completado ? `<p><strong>Hora completado:</strong> ${new Date(data.details.hora_completado).toLocaleString('es-CO', { timeZone: 'America/Bogota', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true })}</p>` : ''}
                             ${(data.details.status === 'completed' && data.details.note) ? `<p><strong>Nota de Despacho:</strong> ${data.details.note}</p>` : ''}
                         </div>
                     </div>

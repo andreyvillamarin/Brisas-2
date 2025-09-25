@@ -86,7 +86,7 @@ class Order {
         try {
             // Obtener datos del pedido
             // ***** THIS IS THE CORRECTED LINE *****
-            $sqlDetails = "SELECT id, customer_type, customer_name, customer_id_number, customer_city, customer_email, mercaderista_supermarket, status, created_at, code, note 
+            $sqlDetails = "SELECT id, customer_type, customer_name, customer_id_number, customer_city, customer_email, mercaderista_supermarket, status, created_at, code, note, hora_envio_despacho, hora_completado 
                            FROM orders 
                            WHERE id = :id";
             $stmt = $this->db->prepare($sqlDetails);
@@ -242,7 +242,7 @@ class Order {
             $updates = [];
 
             // Whitelist of allowed fields to prevent SQL injection
-            $allowed_fields = ['status', 'code', 'note'];
+            $allowed_fields = ['status', 'code', 'note', 'hora_envio_despacho', 'hora_completado'];
 
             foreach ($data as $key => $value) {
                 if (in_array($key, $allowed_fields)) {
