@@ -59,7 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Botón "Agregar Productos al Pedido" del modal
     document.getElementById('add-to-cart-btn').addEventListener('click', () => {
-        mainCart = { ...mainCart, ...tempCart };
+        for (const [productId, productData] of Object.entries(tempCart)) {
+            if (mainCart[productId]) {
+                mainCart[productId].quantity += productData.quantity;
+            } else {
+                mainCart[productId] = productData;
+            }
+        }
         tempCart = {};
         renderMainCart();
         productsModal.hide();

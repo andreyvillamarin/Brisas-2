@@ -94,7 +94,7 @@ class Order {
             $order['details'] = $stmt->fetch(PDO::FETCH_ASSOC);
 
             // Obtener productos del pedido
-            $sqlItems = "SELECT oi.id as item_id, oi.quantity, oi.promotion_text, oi.dispatched, p.name, p.image_url, p.codigo_barras, p.codigo_interno 
+            $sqlItems = "SELECT oi.id as item_id, oi.product_id, oi.quantity, oi.promotion_text, oi.dispatched, p.name, p.image_url, p.codigo_barras, p.codigo_interno 
                          FROM order_items oi 
                          JOIN products p ON oi.product_id = p.id 
                          WHERE oi.order_id = :order_id";
@@ -277,6 +277,33 @@ class Order {
             return $stmt->rowCount() > 0;
         } catch (PDOException $e) {
             error_log("Error updating order item dispatch status: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    public function updateOrderItems($orderId, $items) {
+        try {
+            $this->db->beginTransaction();
+
+            // Delete existing items
+            $stmtDelete = $this->db->prepare("DELETE FROM order_items WHERE order_id = :order_id");
+            $stmtDelete->execute(['order_id' => $orderId]);
+
+            // Insert new items
+            $stmtInsert = $this->db->prepare("INSERT INTO order_items (order_id, product_id, quantity) VALUES (:order_id, :product_id, :quantity)");
+            foreach ($items as $item) {
+                $stmtInsert->execute([
+                    'order_id' => $orderId,
+                    'product_id' => $item['id'],
+                    'quantity' => $item['quantity']
+                ]);
+            }
+
+            $this->db->commit();
+            return true;
+        } catch (PDOException $e) {
+            $this->db->rollBack();
+            error_log("Error updating order items: " . $e->getMessage());
             return false;
         }
     }

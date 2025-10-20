@@ -1,0 +1,203 @@
+[20-Oct-2025 08:02:35 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:04:11 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:08:04 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:09:03 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:11:05 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:11:17 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:11:22 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/update_order.php(15): Order->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php on line 6
+[20-Oct-2025 08:11:24 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/update_order.php(15): Order->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php on line 6
+[20-Oct-2025 08:11:27 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/update_order.php(15): Order->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php on line 6
+[20-Oct-2025 08:12:24 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:12:29 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/update_order.php(15): Order->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php on line 6
+[20-Oct-2025 08:12:43 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:13:02 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:17:07 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:17:10 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/update_order.php(15): Order->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php on line 6
+[20-Oct-2025 08:17:11 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/update_order.php(15): Order->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php on line 6
+[20-Oct-2025 08:17:16 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:17:19 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/update_order.php(15): Order->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php on line 6
+[20-Oct-2025 08:23:49 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:23:52 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/update_order.php(15): Order->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php on line 6
+[20-Oct-2025 08:23:53 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/update_order.php(15): Order->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php on line 6
+[20-Oct-2025 08:26:19 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:26:27 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/update_order.php(15): Order->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Order.php on line 6
+[20-Oct-2025 08:28:16 America/Bogota] PHP Fatal error:  Uncaught Error: Class "Database" not found in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php:6
+Stack trace:
+#0 /home/qdosnetw/public_html/demos/brisas/api/get_products.php(8): Product->__construct()
+#1 {main}
+  thrown in /home/qdosnetw/public_html/demos/brisas/app/models/Product.php on line 6
+[20-Oct-2025 08:38:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:38:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:39:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:39:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:40:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:40:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:41:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:41:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:42:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:42:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:43:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:43:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:44:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:44:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:45:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:45:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:46:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:46:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:47:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:47:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:48:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:48:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:49:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:49:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:50:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:50:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:51:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:51:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:52:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:52:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:53:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:53:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:54:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:54:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:55:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:55:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:56:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:56:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:57:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:57:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:58:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:58:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:59:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 08:59:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:00:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:00:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:01:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:01:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:02:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:02:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:03:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:03:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:04:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:04:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:05:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:05:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:06:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:06:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:07:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:07:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:08:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:08:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:09:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:09:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:10:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:10:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:11:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:11:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:12:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:12:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:13:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:13:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:14:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:14:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:15:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:15:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:16:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:16:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:17:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:17:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:18:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:18:31 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[20-Oct-2025 09:19:01 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
