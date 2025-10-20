@@ -69,9 +69,15 @@ try {
     $stmtItems = $db->prepare($sqlItems);
 
     foreach ($data['cart'] as $productId => $item) {
+        // Si el ID del producto viene con el prefijo "promo-", quitarlo para la inserción en la BD.
+        $actualProductId = $productId;
+        if (strpos($actualProductId, 'promo-') === 0) {
+            $actualProductId = substr($actualProductId, 6);
+        }
+
         $stmtItems->execute([
             ':order_id' => $orderId,
-            ':product_id' => $productId,
+            ':product_id' => $actualProductId,
             ':quantity' => $item['quantity'],
             ':promotion_text' => $item['promoDescription'] ?? null
         ]);
