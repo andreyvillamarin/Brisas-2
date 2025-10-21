@@ -273,7 +273,7 @@ class Order {
             $stmt = $this->db->prepare($sql);
             $stmt->execute($params);
 
-            return $stmt->rowCount() > 0;
+            return true;
         } catch (PDOException $e) {
             error_log("Error updating order details: " . $e->getMessage());
             return false;

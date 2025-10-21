@@ -61,3 +61,7 @@
 [21-Oct-2025 08:02:34 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
 [21-Oct-2025 08:02:41 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
 [21-Oct-2025 08:04:25 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[21-Oct-2025 08:44:10 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[21-Oct-2025 08:44:12 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[21-Oct-2025 08:44:21 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
+[21-Oct-2025 08:44:26 America/Bogota] PHP Warning:  Constant APP_ROOT already defined in /home/qdosnetw/brisas_secure_configs/main_config.php on line 13
