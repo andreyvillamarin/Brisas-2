@@ -32,6 +32,22 @@ class Product {
         }
     }
 
+    public function getByCategory($categoryId) {
+        try {
+            $sql = "SELECT p.*, c.name AS category_name 
+                    FROM products p 
+                    LEFT JOIN categories c ON p.category_id = c.id 
+                    WHERE p.category_id = :category_id
+                    ORDER BY p.name ASC";
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute(['category_id' => $categoryId]);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log("Error fetching products by category: " . $e->getMessage());
+            return [];
+        }
+    }
+
     public function create($name, $categoryId, $imageUrl, $codigoBarras = null, $codigoInterno = null) {
         try {
             $stmt = $this->db->prepare("INSERT INTO products (name, category_id, image_url, codigo_barras, codigo_interno) VALUES (:name, :category_id, :image_url, :codigo_barras, :codigo_interno)");

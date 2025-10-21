@@ -31,11 +31,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    function renderModalContent(data, orderId) {
-        const orderDate = new Date(data.details.created_at).toLocaleString('es-CO', {
+    function formatDate(dateString) {
+        if (!dateString) return '';
+        return new Date(dateString).toLocaleString('es-CO', {
             year: 'numeric', month: 'long', day: 'numeric',
-            hour: '2-digit', minute: '2-digit', hour12: true
+            hour: '2-digit', minute: '2-digit', hour12: true,
+            timeZone: 'America/Bogota'
         });
+    }
+
+    function renderModalContent(data, orderId) {
+        const orderDate = formatDate(data.details.created_at);
+        const dispatchedDate = formatDate(data.details.hora_envio_despacho);
+        const completedDate = formatDate(data.details.hora_completado);
 
         let customerType = data.details.customer_type;
         if (!customerType || customerType.trim() === '') {
@@ -63,8 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="col-md-4 text-md-end">
                         <p><strong>Estado:</strong> <span class="badge bg-info">${data.details.status_translated}</span></p>
                         <p><strong>Fecha:</strong> ${orderDate}</p>
-                        ${data.details.hora_envio_despacho ? `<p><strong>Despachado:</strong> ${new Date(data.details.hora_envio_despacho).toLocaleString('es-CO', { timeZone: 'America/Bogota', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true })}</p>` : ''}
-                        ${data.details.hora_completado ? `<p><strong>Hora completado:</strong> ${new Date(data.details.hora_completado).toLocaleString('es-CO', { timeZone: 'America/Bogota', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true })}</p>` : ''}
+                        ${dispatchedDate ? `<p><strong>Despachado:</strong> ${dispatchedDate}</p>` : ''}
+                        ${completedDate ? `<p><strong>Hora completado:</strong> ${completedDate}</p>` : ''}
                     </div>
                 </div>
                 <hr>
@@ -88,9 +96,13 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
 
         data.items.forEach(item => {
+            let promotionHtml = '';
+            if (item.promotion_text) {
+                promotionHtml = `<br><small class="text-success"><strong>Promoción:</strong> ${item.promotion_text}</small>`;
+            }
             contentHtml += `
                 <tr data-item-id="${item.product_id}">
-                    <td>${item.name}</td>
+                    <td>${item.name}${promotionHtml}</td>
                     <td><input type="number" name="quantity[${item.product_id}]" value="${item.quantity}" class="form-control" min="1"></td>
                     <td>${item.codigo_barras || ''}</td>
                     <td>${item.codigo_interno || ''}</td>
@@ -140,15 +152,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (productId && quantity && product) {
                 const tableBody = document.getElementById('order-items-table').querySelector('tbody');
-                const newRow = \`
+                const newRow = `
                     <tr data-item-id="${product.id}" data-new="true">
-                        <td>\${product.name}</td>
-                        <td><input type="number" name="quantity[\${product.id}]" value="\${quantity}" class="form-control" min="1"></td>
-                        <td>\${product.codigo_barras || ''}</td>
-                        <td>\${product.codigo_interno || ''}</td>
-                        <td><button type="button" class="btn btn-danger btn-sm remove-item-btn" data-item-id="\${product.id}">Eliminar</button></td>
+                        <td>${product.name}</td>
+                        <td><input type="number" name="quantity[${product.id}]" value="${quantity}" class="form-control" min="1"></td>
+                        <td>${product.codigo_barras || ''}</td>
+                        <td>${product.codigo_interno || ''}</td>
+                        <td><button type="button" class="btn btn-danger btn-sm remove-item-btn" data-item-id="${product.id}">Eliminar</button></td>
                     </tr>
-                \`;
+                `;
                 tableBody.innerHTML += newRow;
             }
         });
@@ -213,11 +225,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const result = await response.json();
         if (result.success) {
-            alert(\`Pedido \${status}.\`);
+            alert(`Pedido ${status}.`);
             orderDetailsModal.hide();
             location.reload();
         } else {
-            alert(\`Error al cambiar el estado del pedido.\`);
+            alert(`Error al cambiar el estado del pedido.`);
         }
     }
 });

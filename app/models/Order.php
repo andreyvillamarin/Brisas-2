@@ -71,9 +71,20 @@ class Order {
 
     public function updateStatus($orderId, $newStatus) {
         try {
-            $sql = "UPDATE orders SET status = :status WHERE id = :id";
+            $sql = "UPDATE orders SET status = :status";
+            $params = ['status' => $newStatus, 'id' => $orderId];
+
+            if ($newStatus === 'enviado a despacho') {
+                $sql .= ", hora_envio_despacho = NOW()";
+            } elseif ($newStatus === 'completed') {
+                $sql .= ", hora_completado = NOW()";
+            }
+
+            $sql .= " WHERE id = :id";
+
             $stmt = $this->db->prepare($sql);
-            $stmt->execute(['status' => $newStatus, 'id' => $orderId]);
+            $stmt->execute($params);
+            
             return $stmt->rowCount() > 0;
         } catch (PDOException $e) {
             error_log("Error updating order status: " . $e->getMessage());

@@ -7,7 +7,13 @@ require_once APP_ROOT . '/app/models/Product.php';
 
 try {
     $productModel = new Product();
-    $products = $productModel->getAll();
+    
+    if (isset($_GET['category_id']) && !empty($_GET['category_id'])) {
+        $products = $productModel->getByCategory((int)$_GET['category_id']);
+    } else {
+        $products = $productModel->getAll();
+    }
+    
     echo json_encode($products);
 } catch (Exception $e) {
     http_response_code(500);
